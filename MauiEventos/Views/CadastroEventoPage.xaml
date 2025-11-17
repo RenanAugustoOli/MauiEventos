@@ -1,24 +1,90 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiEventos.Views.CadastroEventoPage"
-             Title="Cadastro de Evento">
+             Title="Cadastro de Evento"
+             BackgroundColor="#F2F4F7">
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="14">
+        <VerticalStackLayout Padding="25" Spacing="20">
 
-            <Entry Placeholder="Nome do evento" x:Name="txtNome" />
+            <Frame BackgroundColor="White"
+                   CornerRadius="15"
+                   Padding="20"
+                   HasShadow="True">
 
-            <DatePicker x:Name="dtInicio" />
+                <VerticalStackLayout Spacing="18">
 
-            <DatePicker x:Name="dtFim" />
+                    <Label Text="Cadastro de Evento"
+                           FontSize="26"
+                           HorizontalOptions="Center"
+                           TextColor="#1A2A4A"
+                           FontAttributes="Bold" />
 
-            <Entry Placeholder="Número de participantes" Keyboard="Numeric" x:Name="txtParticipantes"/>
+                    <Entry Placeholder="Nome do Evento"
+                           TextColor="#1A2A4A"
+                           PlaceholderColor="#8A8A8A"
+                           Text="{Binding Nome}"
+                           BackgroundColor="#E8EDF3"
+                           HeightRequest="45"
+                            />
 
-            <Entry Placeholder="Local do evento" x:Name="txtLocal"/>
+                    <VerticalStackLayout>
+                        <Label Text="Data de Início"
+                               TextColor="#1A2A4A"
+                               FontAttributes="Bold"/>
+                        <DatePicker Date="{Binding DataInicio}"
+                                    BackgroundColor="#E8EDF3"
+                                    TextColor="#1A2A4A"
+                                    HeightRequest="45"/>
+                    </VerticalStackLayout>
 
-            <Entry Placeholder="Custo por participante" Keyboard="Numeric" x:Name="txtCusto"/>
+                    <VerticalStackLayout>
+                        <Label Text="Data de Término"
+                               TextColor="#1A2A4A"
+                               FontAttributes="Bold"/>
+                        <DatePicker Date="{Binding DataFim}"
+                                    BackgroundColor="#E8EDF3"
+                                    TextColor="#1A2A4A"
+                                    HeightRequest="45"/>
+                    </VerticalStackLayout>
 
-            <Button Text="Cadastrar" Clicked="Cadastrar_Clicked"/>
+                    <Entry Placeholder="Número de Participantes"
+                           Keyboard="Numeric"
+                           TextColor="#1A2A4A"
+                           PlaceholderColor="#8A8A8A"
+                           Text="{Binding NumeroParticipantes}"
+                           BackgroundColor="#E8EDF3"
+                           HeightRequest="45"
+                            />
+
+                    <Entry Placeholder="Local do Evento"
+                           TextColor="#1A2A4A"
+                           PlaceholderColor="#8A8A8A"
+                           Text="{Binding Local}"
+                           BackgroundColor="#E8EDF3"
+                           HeightRequest="45"
+                          />
+
+                    <Entry Placeholder="Custo por Participante"
+                           Keyboard="Numeric"
+                           TextColor="#1A2A4A"
+                           PlaceholderColor="#8A8A8A"
+                           Text="{Binding CustoPorParticipante}"
+                           BackgroundColor="#E8EDF3"
+                           HeightRequest="45"
+                           />
+
+                    <Button Text="Cadastrar"
+                            BackgroundColor="#1A73E8"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="50"
+                            FontAttributes="Bold"
+                            Clicked="OnCadastrarClicked" />
+
+                </VerticalStackLayout>
+            </Frame>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

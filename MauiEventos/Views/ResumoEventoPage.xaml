@@ -5,21 +5,24 @@
 
     <VerticalStackLayout Padding="20" Spacing="12">
 
-        <Label Text="{Binding Nome, StringFormat='Evento: {0}'}"/>
+        <Label Text="Resumo do Evento" FontSize="24" />
 
-        <Label Text="{Binding Local, StringFormat='Local: {0}'}"/>
+        <Label Text="{Binding Nome}" FontAttributes="Bold" FontSize="18"/>
 
-        <Label Text="{Binding DataInicio, StringFormat='Início: {0:dd/MM/yyyy}'}"/>
+        <Label Text="{Binding Local}" />
 
-        <Label Text="{Binding DataFim, StringFormat='Fim: {0:dd/MM/yyyy}'}"/>
+        <Label Text="Datas:" FontAttributes="Bold" />
+        <Label Text="{Binding DataInicio}" />
+        <Label Text="{Binding DataFim}" />
 
-        <Label Text="{Binding DuracaoDias, StringFormat='Duração: {0} dias'}"/>
+        <Label Text="Duração:" FontAttributes="Bold" />
+        <Label Text="{Binding DuracaoDias}" />
 
-        <Label Text="{Binding NumeroParticipantes, StringFormat='Participantes: {0}'}"/>
+        <Label Text="Participantes:" FontAttributes="Bold" />
+        <Label Text="{Binding NumeroParticipantes}" />
 
-        <Label Text="{Binding CustoPorParticipante, StringFormat='Custo por participante: R$ {0:F2}'}"/>
-
-        <Label Text="{Binding CustoTotal, StringFormat='Custo total: R$ {0:F2}'}"/>
+        <Label Text="Custo Total:" FontAttributes="Bold" />
+        <Label Text="{Binding CustoTotal, StringFormat='R$ {0:F2}'}" />
 
     </VerticalStackLayout>
 </ContentPage>

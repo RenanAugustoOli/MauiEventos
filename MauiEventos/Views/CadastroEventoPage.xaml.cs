@@ -4,26 +4,22 @@ namespace MauiEventos.Views;
 
 public partial class CadastroEventoPage : ContentPage
 {
+    Evento evento;
+
     public CadastroEventoPage()
     {
         InitializeComponent();
-    }
-
-    private async void Cadastrar_Clicked(object sender, EventArgs e)
-    {
-        var evento = new Evento
+        evento = new Evento()
         {
-            Nome = txtNome.Text,
-            DataInicio = dtInicio.Date,
-            DataFim = dtFim.Date,
-            NumeroParticipantes = int.Parse(txtParticipantes.Text),
-            Local = txtLocal.Text,
-            CustoPorParticipante = double.Parse(txtCusto.Text)
+            DataInicio = DateTime.Today,
+            DataFim = DateTime.Today
         };
 
-        await Navigation.PushAsync(new ResumoEventoPage
-        {
-            BindingContext = evento
-        });
+        BindingContext = evento;
+    }
+
+    private async void OnCadastrarClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ResumoEventoPage(evento));
     }
 }
